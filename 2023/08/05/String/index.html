@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>String 的常用方法： | 山茶草の小窝窝😀</title>
+        <meta name="author" content="white gaura" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>耐心等待呦</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>山茶草の小窝窝😀</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;山茶草の小窝窝😀</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>String 的常用方法：</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/java/" style="color: #ff7d73">java</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>String 的常用方法</p>
+<span id="more"></span>
+
+<hr>
+<h6 id="一、字符与字符串之间"><a href="#一、字符与字符串之间" class="headerlink" title="一、字符与字符串之间"></a><strong>一、字符与字符串之间</strong></h6><p>1,public String(char[] value)<br>2,public char[] toCharArray()<br>3.public String(char[] value,int offset , int count)<br>4.public.char charAt(int index)</p>
+<h6 id="二、字节与字符串之间"><a href="#二、字节与字符串之间" class="headerlink" title="二、字节与字符串之间"></a><strong>二、字节与字符串之间</strong></h6><p>1,public String(byte[] value)<br>2,public String(byte[] value,int offset ,int count)<br>3.public byte[] getBytes()</p>
+<h6 id="三、字符串的比较"><a href="#三、字符串的比较" class="headerlink" title="三、字符串的比较"></a>三、字符串的比较</h6><p>1,public boolean equal(String anObject)<br>2,public boolean equalIgnoreCase(String anObject);<br>3,public int compareTo(String anObject)</p>
+<h6 id="四、字符串的查找"><a href="#四、字符串的查找" class="headerlink" title="四、字符串的查找"></a>四、字符串的查找</h6><p>1.public boolean contains(String s)<br>2.public int indexOf(String str)<br>3.public int lastIndexOf(String str)<br>4.public boolean startsWith(String str)<br>5.public boolean endsWith(String str)</p>
+<h6 id="五、字符串的替换"><a href="#五、字符串的替换" class="headerlink" title="五、字符串的替换"></a>五、字符串的替换</h6><p>1,public String replace(String target,String replacement)<br>2,public String replaceALL(String target,String replacement)</p>
+<h6 id="六、字符串的截取"><a href="#六、字符串的截取" class="headerlink" title="六、字符串的截取"></a>六、字符串的截取</h6><p>1.public String substring(int beginindex)<br>2.public String substring(int beginindex，int endindex)</p>
+<h6 id="七、字符串的拆分"><a href="#七、字符串的拆分" class="headerlink" title="七、字符串的拆分"></a>七、字符串的拆分</h6><p>1.public String[] split (String regex)<br>2.public String[] split (String regex,int limit)</p>
+<h6 id="八：其他方法"><a href="#八：其他方法" class="headerlink" title="八：其他方法"></a>八：其他方法</h6><p>1,public String toLowerCase()<br>2,public String toUpperCase()<br>3,public String trim()<br>4,public int length()<br>5,public boolean isEmpty()</p>
+<h5 id="一、字符与字符串之间-1"><a href="#一、字符与字符串之间-1" class="headerlink" title="一、字符与字符串之间"></a>一、字符与字符串之间</h5><h6 id="1-public-String-char-value"><a href="#1-public-String-char-value" class="headerlink" title="1,public String(char[] value)"></a>1,public String(char[] value)</h6><p>构造方法，将字符数组变作String类对象</p>
+<h6 id="2-public-char-toCharArray"><a href="#2-public-char-toCharArray" class="headerlink" title="2,public char[] toCharArray()"></a>2,public char[] toCharArray()</h6><p>普通方法，将String对象转化为字符数组对象</p>
+<pre><code>    //1,public String(char[] value) 构造方法，将字符数组变作String类对象
+    //2,public char[] toCharArray()  普通方法，将String对象转化为字符数组对象
+
+    char[] char1 = new char[] &#123;&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;&#125;;
+    String str1 = new String(char1);
+    System.out.println(str1);
+
+    char[] char2 = str1.toCharArray();
+    print(char2);
+</code></pre>
+<h6 id="3-public-String-char-value-int-offset-int-count"><a href="#3-public-String-char-value-int-offset-int-count" class="headerlink" title="3.public String(char[] value,int offset , int count)"></a>3.public String(char[] value,int offset , int count)</h6><p>构造方法，将部分字符数组变作String；从下标offset开始，向后数count个</p>
+<pre><code>//3.public String(char[] value,int offset , int count)
+    //构造方法，将部分字符数组变作String；
+    //从下标offset开始，向后数count个
+    char[] char3 =new  char[] &#123;&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;&#125;;
+    String str3 = new String(char3,1,2);
+    System.out.println(str3);
+</code></pre>
+<h6 id="4-public-char-charAt-int-index"><a href="#4-public-char-charAt-int-index" class="headerlink" title="4.public.char charAt(int index)"></a>4.public.char charAt(int index)</h6><p>普通方法，返回指定索引对应的字符信息</p>
+<pre><code>    //4.public.char charAt(int index)
+    //普通方法，返回指定索引对应的字符信息
+    System.out.println(str3.charAt(0));
+</code></pre>
+<h5 id="二、字节与字符串之间-1"><a href="#二、字节与字符串之间-1" class="headerlink" title="二、字节与字符串之间"></a>二、字节与字符串之间</h5><h6 id="1-public-String-byte-value"><a href="#1-public-String-byte-value" class="headerlink" title="1,public String(byte[] value)"></a>1,public String(byte[] value)</h6><p>构造方法，将字符数组变作String类对象</p>
+<h6 id="2-public-String-byte-value-int-offset-int-count"><a href="#2-public-String-byte-value-int-offset-int-count" class="headerlink" title="2,public String(byte[] value,int offset ,int count)"></a>2,public String(byte[] value,int offset ,int count)</h6><p>构造方法，将部分字符数组变作String类对象</p>
+<pre><code>    //二、字节与字符串之间
+    //1,public String(byte[] value) 构造方法，将字符数组变作String类对象
+    //2,public String(byte[] value,int offset ,int count)
+    // 构造方法，将部分字符数组变作String类对象
+    byte[]  byte1 = new byte[] &#123;97,98,100,108,105&#125;;
+    System.out.println(new String(byte1)); //abdli
+    System.out.println(new String(byte1,0,2));//ab
+</code></pre>
+<h6 id="3-public-byte-getBytes"><a href="#3-public-byte-getBytes" class="headerlink" title="3.public byte[] getBytes()"></a>3.public byte[] getBytes()</h6><p>普通方法，将字符串变为字节数组</p>
+<pre><code>    //3.public byte[] getBytes()
+    //普通方法，将字符串变为字节数组
+    String str5 =&quot;hello&quot;;
+    print(str5.getBytes()); //104 101 108 108 111
+</code></pre>
+<h5 id="三、字符串的比较-1"><a href="#三、字符串的比较-1" class="headerlink" title="三、字符串的比较"></a>三、字符串的比较</h5><h6 id="1-public-boolean-equal-String-anObject"><a href="#1-public-boolean-equal-String-anObject" class="headerlink" title="1,public boolean equal(String anObject)"></a>1,public boolean equal(String anObject)</h6><p>进行相等判断</p>
+<h6 id="2-public-boolean-equalIgnoreCase-String-anObject"><a href="#2-public-boolean-equalIgnoreCase-String-anObject" class="headerlink" title="2,public boolean equalIgnoreCase(String anObject);"></a>2,public boolean equalIgnoreCase(String anObject);</h6><p>进行相等判断,不区分大小写</p>
+<h6 id="3-public-int-compareTo-String-anObject"><a href="#3-public-int-compareTo-String-anObject" class="headerlink" title="3,public int compareTo(String anObject)"></a>3,public int compareTo(String anObject)</h6><p>判断两个字符串的大小（）按字节编码比较<br>&#x3D;0;表示相等 &gt;0：表示大于的结果 &lt;0 :表示小于</p>
+<h5 id="三、字符串的比较-2"><a href="#三、字符串的比较-2" class="headerlink" title="三、字符串的比较"></a>三、字符串的比较</h5><h6 id="1-public-boolean-equal-String-anObject-1"><a href="#1-public-boolean-equal-String-anObject-1" class="headerlink" title="1,public boolean equal(String anObject);"></a>1,public boolean equal(String anObject);</h6><p>进行相等判断</p>
+<h6 id="2-public-boolean-equalIgnoreCase-String-anObject-1"><a href="#2-public-boolean-equalIgnoreCase-String-anObject-1" class="headerlink" title="2,public boolean equalIgnoreCase(String anObject);"></a>2,public boolean equalIgnoreCase(String anObject);</h6><p>进行相等判断,不区分大小写</p>
+<h6 id="3-public-int-compareTo-String-anObject-1"><a href="#3-public-int-compareTo-String-anObject-1" class="headerlink" title="3,public int compareTo(String anObject);"></a>3,public int compareTo(String anObject);</h6><p>判断两个字符串的大小（）按字节编码比较<br>0:表示相等 ;&gt;0：表示大于的结果 ;&lt;0 :表示小于</p>
+<pre><code>    String str6 = &quot;hello&quot;;
+    System.out.println(str6.equals(&quot;HELLO&quot;)); //false
+    System.out.println(str6.equalsIgnoreCase(&quot;HELLO&quot;));//true
+
+    System.out.println(str6.compareTo(&quot;HELLO&quot;)); //32
+    System.out.println(&quot;HELLO&quot;.compareTo(str6));  //-32
+    System.out.println(str6.compareTo(&quot;hello&quot;));  //0
+</code></pre>
+<h5 id="四、字符串的查找-1"><a href="#四、字符串的查找-1" class="headerlink" title="四、字符串的查找"></a>四、字符串的查找</h5><h6 id="1-public-boolean-contains-String-s"><a href="#1-public-boolean-contains-String-s" class="headerlink" title="1.public boolean contains(String s)"></a>1.public boolean contains(String s)</h6><p>判定子字符串是否存在</p>
+<pre><code>    //1.public boolean contains(String s)
+    //判定子字符串是否存在
+    String str7 = &quot;abcdefgh&quot;;
+    System.out.println(str7.contains(&quot;def&quot;));  //true
+    System.out.println(str7.contains(&quot;dec&quot;));  //false
+</code></pre>
+<h6 id="2-public-int-indexOf-String-str"><a href="#2-public-int-indexOf-String-str" class="headerlink" title="2.public int indexOf(String str)"></a>2.public int indexOf(String str)</h6><p>由前向后查找指定字符串的位置，若查找到则返回第一个数的位置，<br>若查找不到则返回-1</p>
+<pre><code>    //2.public int indexOf(String str)
+    //由前向后查找指定字符串的位置，若查找到则返回第一个数的位置，
+    //                         若查找不到则返回-1
+    System.out.println(str7.indexOf(&quot;def&quot;));    //3
+    System.out.println(str7.indexOf(&quot;dec&quot;));     //-1
+</code></pre>
+<h6 id="3-public-int-lastIndexOf-String-str"><a href="#3-public-int-lastIndexOf-String-str" class="headerlink" title="3.public int lastIndexOf(String str)"></a>3.public int lastIndexOf(String str)</h6><p>由后向前查找指定字符串的位置，若查找到则返回第一个数的位置，<br>若查找不到则返回-1</p>
+<pre><code>    //3.public int lastIndexOf(String str)
+    //由后向前查找指定字符串的位置，若查找到则返回第一个数的位置，
+    //                         若查找不到则返回-1
+    System.out.println(str7.lastIndexOf(&quot;def&quot;));    //3
+    System.out.println(str7.lastIndexOf(&quot;dec&quot;));     //-1
+</code></pre>
+<h6 id="4-public-boolean-startsWith-String-str"><a href="#4-public-boolean-startsWith-String-str" class="headerlink" title="4.public boolean startsWith(String str)"></a>4.public boolean startsWith(String str)</h6><p>是否以指定字符串开头</p>
+<pre><code>    //4.public boolean startsWith(String str)
+    //是否以指定字符串开头
+    System.out.println(str7.startsWith(&quot;abc&quot;));   //true
+    System.out.println(str7.startsWith(&quot;abd&quot;));    //false
+</code></pre>
+<h6 id="5-public-boolean-endsWith-String-str"><a href="#5-public-boolean-endsWith-String-str" class="headerlink" title="5.public boolean endsWith(String str)"></a>5.public boolean endsWith(String str)</h6><p>是否以指定字符串结尾</p>
+<pre><code>    //5.public boolean endsWith(String str)
+    //是否以指定字符串结尾
+    System.out.println(str7.endsWith(&quot;abc&quot;));   //false
+    System.out.println(str7.endsWith(&quot;fgh&quot;));    //true
+</code></pre>
+<h5 id="五、字符串的替换-1"><a href="#五、字符串的替换-1" class="headerlink" title="五、字符串的替换"></a>五、字符串的替换</h5><h6 id="1-public-String-replace-String-target-String-replacement"><a href="#1-public-String-replace-String-target-String-replacement" class="headerlink" title="1,public String replace(String target,String replacement)"></a>1,public String replace(String target,String replacement)</h6><p>用新的内容替换首个旧的内容</p>
+<h6 id="2-public-String-replaceALL-String-target-String-replacement"><a href="#2-public-String-replaceALL-String-target-String-replacement" class="headerlink" title="2,public String replaceALL(String target,String replacement)"></a>2,public String replaceALL(String target,String replacement)</h6><p>用新的内容替换全部旧的内容</p>
+<pre><code>    //五、字符串的替换
+    //1,public String replace(String target,String replacement)
+    //用新的内容替换首个旧的内容
+    String str8 = &quot;hello world&quot;;
+    String str8ResultA =str8.replace(&quot;l&quot;,&quot;-&quot;);
+    System.out.println(str8ResultA); //he-lo world
+
+    //2,public String replaceALL(String target,String replacement)
+    //用新的内容替换全部旧的内容
+    String str8ResultB =str8.replaceFirst(&quot;l&quot;,&quot;-&quot;);
+    System.out.println(str8ResultB); //he--o wor-d
+</code></pre>
+<h5 id="六、字符串的截取-1"><a href="#六、字符串的截取-1" class="headerlink" title="六、字符串的截取"></a>六、字符串的截取</h5><h6 id="1-public-String-substring-int-beginindex"><a href="#1-public-String-substring-int-beginindex" class="headerlink" title="1.public String substring(int beginindex)"></a>1.public String substring(int beginindex)</h6><p>从指定索引截取到末尾</p>
+<h6 id="2-public-String-substring-int-beginindex，int-endindex"><a href="#2-public-String-substring-int-beginindex，int-endindex" class="headerlink" title="2.public String substring(int beginindex，int endindex)"></a>2.public String substring(int beginindex，int endindex)</h6><p>从指定索引截取到指定位置</p>
+<pre><code>    //六、字符串的截取
+    //1.public String substring(int beginindex)
+    //从指定索引截取到末尾
+    //2.public String substring(int beginindex，int endindex)
+    //从指定索引截取到末尾
+    String str9 = &quot;hello world&quot;;
+    System.out.println(str9.substring(3));   //lo world
+    System.out.println(str9.substring(3,8));  // lo wo
+</code></pre>
+<h5 id="七、字符串的拆分-1"><a href="#七、字符串的拆分-1" class="headerlink" title="七、字符串的拆分"></a>七、字符串的拆分</h5><h6 id="1-public-String-split-String-regex"><a href="#1-public-String-split-String-regex" class="headerlink" title="1.public String[] split (String regex)"></a>1.public String[] split (String regex)</h6><p>按照指定的字符串为间隔拆分</p>
+<h6 id="2-public-String-split-String-regex-int-limit"><a href="#2-public-String-split-String-regex-int-limit" class="headerlink" title="2.public String[] split (String regex,int limit)"></a>2.public String[] split (String regex,int limit)</h6><p>按照指定的字符串为间隔拆分,并限制字符串数组格式</p>
+<pre><code>    //七、字符串的拆分
+    //1.public String[] split (String regex)
+    //按照指定的字符串为间隔拆分
+    String str10 = &quot;hello world thanks&quot;;
+    String[] str =str10.split(&quot; &quot;);
+    print(str);
+    //输出结果 hello
+    //        world
+    //        thanks
+
+    //2.public String[] split (String regex,int limit)
+    //按照指定的字符串为间隔拆分,并限制字符串数组格式
+    String[] strA =str10.split(&quot; &quot;,2);
+    print(strA);
+    //输出结果 hello
+    //        world thanks
+
+    //Demo 一个较为复杂的拆分
+    String info = &quot;张三：20：男|李四：25：男|王五：25：女&quot;;
+    String[] result = info.split(&quot;\\|&quot;);  //添加转义符号，与正则表达式的操作有关？
+    for(String strInfo:result)&#123;
+        String[] temp = strInfo.split(&quot;：&quot;);
+        System.out.println(&quot;name:&quot;+temp[0]+&quot;  age:&quot;+temp[1]+&quot;  sex&quot;+temp[2]);
+    &#125;
+    //结果：
+    //name:张三  age:20  sex男
+    //name:李四  age:25  sex男
+    //name:王五  age:25  sex女
+</code></pre>
+<h5 id="八：其他方法-1"><a href="#八：其他方法-1" class="headerlink" title="八：其他方法"></a>八：其他方法</h5><h6 id="1-public-String-toLowerCase"><a href="#1-public-String-toLowerCase" class="headerlink" title="1,public String toLowerCase()"></a>1,public String toLowerCase()</h6><p>转小写</p>
+<h6 id="2-public-String-toUpperCase"><a href="#2-public-String-toUpperCase" class="headerlink" title="2,public String toUpperCase()"></a>2,public String toUpperCase()</h6><p>转大写</p>
+<h6 id="3-public-String-trim"><a href="#3-public-String-trim" class="headerlink" title="3,public String trim()"></a>3,public String trim()</h6><p>去掉开头和结尾的空格，保留中间的空格</p>
+<h6 id="4-public-int-length"><a href="#4-public-int-length" class="headerlink" title="4,public int length()"></a>4,public int length()</h6><p>返回字符串长度</p>
+<h6 id="5-public-boolean-isEmpty"><a href="#5-public-boolean-isEmpty" class="headerlink" title="5,public boolean isEmpty()"></a>5,public boolean isEmpty()</h6><p>判断是否为空</p>
+<pre><code>    // 八：其他方法
+    //1,public String toLowerCase()
+    //转小写
+    //2,public String toUpperCase()
+    //转大写
+    String str11 = &quot;HeLLo&quot;;
+    System.out.println(str11.toLowerCase()); //hello
+    System.out.println(str11.toUpperCase()); //HELLO
+
+    //3,public String trim()
+    //去掉开头和结尾的空格，保留中间的空格
+    String str12 = &quot;   HeLLo  world  &quot;;
+    System.out.println(str12.trim());  //HeLLo  world
+
+    //4,public int length()
+    //返回字符串长度
+    System.out.println(str12.length());  //17
+
+    //5,public boolean isEmpty()
+    //判断是否为空
+    System.out.println(str12.isEmpty());  //false
+    System.out.println(&quot;&quot;.isEmpty());     //true
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 山茶草の小窝窝😀
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;white gaura
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+       <canvas id="fireworks" style="position: fixed; left: 0px; top: 0px; pointer-events: none; z-index: 2147483647; width: 1920px; height: 151px;" width="3840" height="302"></canvas>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+<script type="text/javascript">
+    function updateCoords(e) {
+        pointerX = (e.clientX || e.touches[0].clientX) - canvasEl.getBoundingClientRect().left,
+            pointerY = e.clientY || e.touches[0].clientY - canvasEl.getBoundingClientRect().top
+    }
+
+    function setParticuleDirection(e) {
+        var t = anime.random(0, 360) * Math.PI / 180,
+            a = anime.random(50, 180),
+            n = [-1, 1][anime.random(0, 1)] * a;
+        return {
+            x: e.x + n * Math.cos(t),
+            y: e.y + n * Math.sin(t)
+        }
+    }
+
+    function createParticule(e, t) {
+        var a = {};
+        return a.x = e,
+            a.y = t,
+            a.color = colors[anime.random(0, colors.length - 1)],
+            a.radius = anime.random(16, 32),
+            a.endPos = setParticuleDirection(a),
+            a.draw = function() {
+                ctx.beginPath(),
+                    ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0),
+                    ctx.fillStyle = a.color,
+                    ctx.fill()
+            },
+            a
+    }
+
+    function createCircle(e, t) {
+        var a = {};
+        return a.x = e,
+            a.y = t,
+            a.color = "#F00",
+            a.radius = .1,
+            a.alpha = .5,
+            a.lineWidth = 6,
+            a.draw = function() {
+                ctx.globalAlpha = a.alpha,
+                    ctx.beginPath(),
+                    ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0),
+                    ctx.lineWidth = a.lineWidth,
+                    ctx.strokeStyle = a.color,
+                    ctx.stroke(),
+                    ctx.globalAlpha = 1
+            },
+            a
+    }
+
+    function renderParticule(e) {
+        for (var t = 0; t < e.animatables.length; t++)
+            e.animatables[t].target.draw()
+    }
+
+    function animateParticules(e, t) {
+        for (var a = createCircle(e, t), n = [], i = 0; i < numberOfParticules; i++)
+            n.push(createParticule(e, t));
+        anime.timeline().add({
+            targets: n,
+            x: function(e) {
+                return e.endPos.x
+            },
+            y: function(e) {
+                return e.endPos.y
+            },
+            radius: .1,
+            duration: anime.random(1200, 1800),
+            easing: "easeOutExpo",
+            update: renderParticule
+        }).add({
+            targets: a,
+            radius: anime.random(80, 160),
+            lineWidth: 0,
+            alpha: {
+                value: 0,
+                easing: "linear",
+                duration: anime.random(600, 800)
+            },
+            duration: anime.random(1200, 1800),
+            easing: "easeOutExpo",
+            update: renderParticule,
+            offset: 0
+        })
+    }
+
+    function debounce(fn, delay) {
+        var timer
+        return function() {
+            var context = this
+            var args = arguments
+            clearTimeout(timer)
+            timer = setTimeout(function() {
+                fn.apply(context, args)
+            }, delay)
+        }
+    }
+
+    var canvasEl = document.querySelector("#fireworks");
+    if (canvasEl) {
+        var ctx = canvasEl.getContext("2d"),
+            numberOfParticules = 30,
+            pointerX = 0,
+            pointerY = 0,
+            tap = "mousedown",
+            colors = ["#FF1461", "#18FF92", "#5A87FF", "#FBF38C"],
+            setCanvasSize = debounce(function() {
+                canvasEl.width = 2 * window.innerWidth,
+                    canvasEl.height = 2 * window.innerHeight,
+                    canvasEl.style.width = window.innerWidth + "px",
+                    canvasEl.style.height = window.innerHeight + "px",
+                    canvasEl.getContext("2d").scale(2, 2)
+            }, 500),
+            render = anime({
+                duration: 1 / 0,
+                update: function() {
+                    ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
+                }
+            });
+        document.addEventListener(tap, function(e) {
+                "sidebar" !== e.target.id && "toggle-sidebar" !== e.target.id && "A" !== e.target.nodeName && "IMG" !== e.target.nodeName && (render.play(),
+                    updateCoords(e),
+                    animateParticules(pointerX, pointerY))
+            }, !1),
+            setCanvasSize(),
+
+            window.addEventListener("resize", setCanvasSize, !1)
+    }
+</script>
+    </body>
+</html>
